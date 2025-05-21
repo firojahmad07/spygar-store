@@ -11,6 +11,13 @@ export default defineConfig({
       '@': fileURLToPath(new URL('./src', import.meta.url)),
     },
   },
+  server: {
+    port: 9001, // Change this to any available port
+    strictPort: true, // Ensures Vite fails if the port is already in use
+    hmr: {
+      host: 'localhost',
+    },
+  },
   build: {
     chunkSizeWarningLimit: 3000,
     outDir: '../../public',
