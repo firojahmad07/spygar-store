@@ -12,6 +12,7 @@ export default defineConfig({
     },
   },
   server: {
+    host: '0.0.0.0',
     port: 9001, // Change this to any available port
     strictPort: true, // Ensures Vite fails if the port is already in use
     hmr: {
@@ -24,14 +25,14 @@ export default defineConfig({
     emptyOutDir: false,
     rollupOptions: {
       output: {
-        entryFileNames: 'build/shop-bundle.js', // Custom filename for entry files
-        chunkFileNames: 'build/shop-bundle-[hash].js', // Custom filename for chunks
+        entryFileNames: 'build/store-bundle.js', // Custom filename for entry files
+        chunkFileNames: 'build/store-bundle-[hash].js', // Custom filename for chunks
         assetFileNames: (assetInfo) => {
           if (assetInfo.name?.endsWith('.css')) {
-            return 'build/shop-bundle.css'; // Custom CSS filename
+            return 'build/store-bundle.css'; // Custom CSS filename
           }
           
-          return 'build/shop-bundle-[hash][extname]'; // Default for other build
+          return 'build/store-bundle-[hash][extname]'; // Default for other build
         }
       }
     }
